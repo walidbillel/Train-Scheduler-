@@ -1,0 +1,116 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Train Scheduler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Anytime is Train Time</h1>
+            <br>
+            <h6>Choo Choo. Chee Chee</h6>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 20px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card border-dark bg-light">
+                    <div class="card-header">
+                        <b>Current Train Schedule</b>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover" id='train-table'>
+                            <thead>
+                                <tr>
+                                    <th>Train Name</th>
+                                    <th>Destination</th>
+                                    <th>Frequency (min)</th>
+                                    <th>Next Arrival</th>
+                                    <th>Minutes Away</th>
+                
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container" style="margin-top: 20px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card border-dark bg-light">
+                    <div class="card-header">
+                        <b>Add Train</b>
+                    </div>
+                    <div class="card-body">
+
+                        <form>
+                            <div class="form-group">
+                                <label for="train-name">
+                                    <b>Train Name</b>
+                                </label>
+                                <input type="text" class="form-control" id="train-name" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="destination">
+                                    <b>Destination</b>
+                                </label>
+                                <input type="text" class="form-control" id="destination" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="first-train-time">
+                                    <b>First Train Time (HH:mm - military time)</b>
+                                </label>
+                                <input type="text" class="form-control" id="first-train-time" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Frequency">
+                                    <b>Frequency (min)</b>
+                                </label>
+                                <input type="number" class="form-control" id="frequency" placeholder="">
+                            </div>
+
+
+                            <button type="submit" id="add-train-btn" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script src="assets/javascript/app.js"></script>
+
+</html>
