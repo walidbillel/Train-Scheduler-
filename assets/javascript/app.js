@@ -21,13 +21,16 @@ var config = {
     var destination = $("#destination").val().trim();
     var firstTrain = $("#first-train-time").val().trim();
     var frequency = $("#frequency").val().trim();
+    frequency = parseInt(frequency);
 
     // local object that holds the trains added
     var newTrain = {
       name: trainName,
       dest: destination,
       fTrain: firstTrain,
-      freq: frequency
+      freq: frequency,
+      // nextTrainF: nextTrainFormated,
+      // minutesTillTrain: minutesTillNextTrain
     };
 
     // upload the newTrain to the database
@@ -52,10 +55,37 @@ var config = {
     var firstTrain = snapshot.val().fTrain;
     var frequency = snapshot.val().freq;
 
+    var firstTrainTime = moment(firstTrain, "HH:mm").subtract(1, "years");
+
+    console.log(firstTrainTime);
+
+    var currentTime = moment();
+
+    diffTime = currentTime.diff(moment(firstTrainTime), "minutes");
+
+    console.log("diffTime = " + diffTime);
+
+    tRemainder = diffTime % frequency;
+
+   
+
+    minutesTillNextTrain = frequency - tRemainder;
+
+    console.log( "min = " + minutesTillNextTrain);
+
+
+
+
+
+    nextTrain = currentTime.add(minutesTillNextTrain, "minutes");
+
+    nextTrainFormated = moment(nextTrain).format("HH:mm");
+
+    console.log("next train = " + nextTrainFormated)
 
 
     // Adding each train into a row
-    $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td></tr>" )
+    $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextTrainFormated + "</td><td>" + minutesTillNextTrain +  "</td></tr>" )
   })
 
   
