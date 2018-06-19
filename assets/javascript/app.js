@@ -81,11 +81,11 @@ var config = {
 
     nextTrainFormated = moment(nextTrain).format("HH:mm");
 
-    console.log("next train = " + nextTrainFormated)
+    console.log("next train = " + nextTrainFormated);
 
 
     // Adding each train into a row
-    $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextTrainFormated + "</td><td>" + minutesTillNextTrain +  "</td></tr>" )
+    $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextTrainFormated + "</td><td>" + minutesTillNextTrain + " minutes" + "</td></tr>" )
   })
 
   
