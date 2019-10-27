@@ -11,8 +11,10 @@
 }
 
 body {
-    background-image: url(https://i.ytimg.com/vi/2t1qSQx-c0c/maxresdefault.jpg)
+    background-image: linear-gradient(rgb(83, 1, 1), rgb(44, 44, 2));;
 }
+
+
 
 .container {
     opacity: 0.9;
