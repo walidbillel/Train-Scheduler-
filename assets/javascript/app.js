@@ -46,7 +46,7 @@ $("#add-train-btn").on("click", function () {
 
 // 3. Create Firebase event for adding  to the the train database and a row in the html when a user adds an entry
 database.ref("/trains").on("child_added", function (snapshot) {
-  console.log(snapshot.val());
+  // console.log(snapshot.val());
 
   // store everything into a variable 
 
@@ -57,13 +57,13 @@ database.ref("/trains").on("child_added", function (snapshot) {
 
   var firstTrainTime = moment(firstTrain, "HH:mm").subtract(1, "years");
 
-  console.log(firstTrainTime);
+  // console.log(firstTrainTime);
 
   var currentTime = moment();
 
   diffTime = currentTime.diff(moment(firstTrainTime), "minutes");
 
-  console.log("diffTime = " + diffTime);
+  // console.log("diffTime = " + diffTime);
 
   tRemainder = diffTime % frequency;
 
@@ -71,7 +71,7 @@ database.ref("/trains").on("child_added", function (snapshot) {
 
   minutesTillNextTrain = frequency - tRemainder;
 
-  console.log("min = " + minutesTillNextTrain);
+  // console.log("min = " + minutesTillNextTrain);
 
 
 
@@ -81,7 +81,7 @@ database.ref("/trains").on("child_added", function (snapshot) {
 
   nextTrainFormated = moment(nextTrain).format("HH:mm");
 
-  console.log("next train = " + nextTrainFormated);
+  // console.log("next train = " + nextTrainFormated);
 
 
   // Adding each train into a row
